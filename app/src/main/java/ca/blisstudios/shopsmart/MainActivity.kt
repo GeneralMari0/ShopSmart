@@ -7,15 +7,15 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,21 +34,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ShopsmartTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting()
-                }
-            }
+            MainPage()
         }
     }
 }
 
 @Composable
-fun Greeting( modifier: Modifier = Modifier) {
+fun ProductPage( modifier: Modifier = Modifier) {
 
     Column(
         modifier = Modifier.background(Color.White)
@@ -59,7 +51,7 @@ fun Greeting( modifier: Modifier = Modifier) {
         Text(
             text = "Shopping App",
             color = Color.Black,
-            fontSize = 40.sp,
+            fontSize = 41.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             modifier = Modifier
@@ -152,10 +144,592 @@ fun Greeting( modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun MainPage() {
+    LazyColumn(
+        modifier = Modifier
+            .background(Color.White)
+    )
+    {
+
+
+        item{
+            Text(
+                text = "Shopping App",
+                color = Color.Black,
+                fontSize = 41.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .background(Color(27, 178, 244, 96))
+                    .padding(10.dp)
+                    .fillMaxWidth()
+            )
+        }
+        item{
+            Text(
+                text = " Popular Items ",
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .padding(top = 80.dp)
+            )
+        }
+
+
+        item{
+            LazyRow(modifier = Modifier
+                .background(Color.White)
+                .padding(20.dp),
+                horizontalArrangement = Arrangement.Center
+
+            ){
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.lucerne_chocolate_4l),
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+
+                        Text(
+                            text = "  Chocolate Milk 4L  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+
+                        Text(
+                            text = "$8.29",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.drpepper_12pack),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+
+                        Text(
+                            text = "  Dr. Pepper 12Pk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+
+                        Text(
+                            text = "$7.99",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+
+                }
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.pepsi),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+
+                        Text(
+                            text = "  Pepsi 12pk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$7.99",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+
+                item{
+
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.lunchable),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  Lunchables, Pizza  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$4.49",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        item{Text(
+            text = " Dairy ",
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp,
+            textAlign = TextAlign.Left,
+            modifier = Modifier
+                .padding(top = 80.dp)
+        )}
+
+        item{
+            LazyRow(modifier = Modifier
+                .background(Color.White)
+                .padding(20.dp)
+
+            ){
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.lucerne_2__4l),
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  2% Milk 4L  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$5.79",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.lucerne_2_2l),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  2% Milk 2L  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$4.69",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+
+                }
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.fairland),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = " Fairlife 2% Organic Milk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$5.99",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+
+                item{
+
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.lucerne_0_4l),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  0% Milk 4L  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$5.79",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        item{
+            Text(
+                text = " Pop ",
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp,
+                textAlign = TextAlign.Left,
+                modifier = Modifier
+                    .padding(top = 80.dp)
+            )
+        }
+
+        item{
+            LazyRow(modifier = Modifier
+                .background(Color.White)
+                .padding(20.dp)
+
+            ){
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.coke_12pack),
+                            contentDescription = null,
+                            contentScale = ContentScale.Fit,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  Coca-Cola 12Pk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$7.99",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.drpepper_12pack),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  Dr. Pepper 12Pk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$7.99",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+
+                }
+
+                item{
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.crush_cream),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  Crush Cream Soda 2L  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$3.49",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+
+                item{
+
+                    Column{
+                        Image(
+                            painter = painterResource(id = R.drawable.sprite),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .padding(vertical = 20.dp)
+                        )
+                        Text(
+                            text = "  Sprite Mini 6pk  ",
+                            color = Color.Black,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "$5.49",
+                            color = Color.Red,
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                            modifier = Modifier
+                                .padding(horizontal = 60.dp)
+                        )
+
+                        Button(
+                            modifier = Modifier
+                                .padding(horizontal = 50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
+                            onClick =
+                            {
+
+                            }
+                        )
+                        {
+                            Text(text = "View")
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     ShopsmartTheme {
-        Greeting()
+        MainPage()
     }
 }
