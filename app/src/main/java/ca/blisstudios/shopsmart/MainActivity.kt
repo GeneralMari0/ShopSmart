@@ -472,7 +472,7 @@ fun MainPage() {
                             fontSize = 20.sp
                         )
                         Text(
-                            text = "$5.99",
+                            text = "$5.98",
                             color = Color.Red,
                             textAlign = TextAlign.Center,
                             fontWeight = FontWeight.Bold,
