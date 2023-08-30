@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -48,28 +49,26 @@ fun Navigate()
 {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "friendslist") {
-        composable("mainpage")
+    NavHost(navController = navController, startDestination = "main_page") {
+        composable("main_page")
         {
-            MainPage()
+            MainPage(navController)
         }
-        composable("friendslist")
+        composable("product_page")
         {
-            ProductPage()
+            ProductPage(navController)
         }
 
     }
 }
 
 @Composable
-fun ProductPage( modifier: Modifier = Modifier) {
+fun ProductPage(navController: NavHostController, modifier: Modifier = Modifier) {
 
     Column(
         modifier = Modifier.background(Color.White)
     )
     {
-        
-
         Text(
             text = "Shopping App",
             color = Color.Black,
@@ -102,9 +101,8 @@ fun ProductPage( modifier: Modifier = Modifier) {
             )
 
         Button(
-            onClick =
-            {
-
+            onClick = {
+                navController.navigate("main_page")
             }
         )
         {
@@ -167,7 +165,7 @@ fun ProductPage( modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun MainPage() {
+fun MainPage(navController: NavHostController, ) {
 
     LazyColumn(
         modifier = Modifier
@@ -244,7 +242,7 @@ fun MainPage() {
                             colors = ButtonDefaults.buttonColors(containerColor = Color(24, 115, 252, 99)),
                             onClick =
                             {
-
+                                navController.navigate("product_page")
                             }
                         )
                         {
@@ -752,7 +750,5 @@ fun MainPage() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ShopsmartTheme {
-        MainPage()
-    }
+
 }
