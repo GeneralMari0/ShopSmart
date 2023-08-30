@@ -28,12 +28,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ca.blisstudios.shopsmart.ui.theme.ShopsmartTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -165,7 +163,7 @@ fun ProductPage(navController: NavHostController, modifier: Modifier = Modifier)
 }
 
 @Composable
-fun MainPage(navController: NavHostController, ) {
+fun MainPage(navController: NavHostController) {
 
     LazyColumn(
         modifier = Modifier
