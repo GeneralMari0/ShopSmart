@@ -135,7 +135,6 @@ fun ProductPage(navController: NavHostController, modifier: Modifier = Modifier)
                 Row(modifier = Modifier
                     .background(Color(175, 232, 245, 96))
                     .fillMaxWidth()
-                    .border(border = BorderStroke(width = 1.dp, Color.Black))
                 ) {
                     Text(text = "Safeway", modifier = Modifier.padding(20.dp))
                     Text(text = "$7.29", modifier = Modifier.padding(20.dp))
