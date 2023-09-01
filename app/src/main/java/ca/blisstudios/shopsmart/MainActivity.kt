@@ -228,6 +228,8 @@ fun MainPage(navController: NavHostController) {
                             fontSize = 20.sp
                         )
 
+                        val dbPrice : String = "Select Price from Main where ID = 1"
+
                         Text(
                             text = "$8.29",
                             color = Color.Red,

@@ -1,6 +1,11 @@
 package ca.blisstudios.shopsmart
 
-data class ProductData(
-    var ID: Int,
-    var productPrice : Float
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Product(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val price: Float
 )
