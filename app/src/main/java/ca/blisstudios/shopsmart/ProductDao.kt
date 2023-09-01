@@ -6,7 +6,7 @@ import androidx.room.Query
 @Dao
 interface ProductDao {
 
-    @Query("")
+    @Query("SELECT price from Product WHERE id = 1")
     fun getPrice(price: Product)
 
 
